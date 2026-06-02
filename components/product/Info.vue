@@ -5,6 +5,7 @@
   <div id="product-info-verify" class="product-info-verify">
     <p class="label">ProductInfo</p>
     <p class="sub">Variables verified ✓</p>
+    <StatusLabel text="Available" />
   </div>
 </template>
 

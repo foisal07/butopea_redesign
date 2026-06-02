@@ -1,10 +1,15 @@
 <script setup>
+import img1 from '~/assets/images/image_1.png';
+import img2 from '~/assets/images/image_2.jpg';
+import img3 from '~/assets/images/image_3.jpg';
+
+const productImages = [img1, img2, img3];
 </script>
 
 <template>
   <main>
     <!-- 1. Image gallery with zoom, thumbnails, availability label -->
-    <ProductImageGallery />
+    <ProductImageGallery :images="productImages" />
 
     <!-- 2. Product title, subtitle, price -->
     <ProductInfo />
