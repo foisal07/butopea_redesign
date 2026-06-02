@@ -2,6 +2,11 @@
 
 > **This document is the single source of truth for this project.**
 >
+> Every agent that receives a task related to this project **must**:
+> 1. Read this file in full before starting any work.
+> 2. Follow every constraint listed here without exception.
+> 3. If a user instruction conflicts with this file, **stop and ask for clarification** — do not resolve the conflict silently by guessing.
+> 4. Never invent requirements, components, copy, or behaviors that are not explicitly described in this file or in the accompanying wireframe.
 
 ---
 
@@ -12,10 +17,7 @@ A functional redesigned product detail page (PDP) mockup for a Hungarian furnitu
 
 **Reference product:**
 - URL: https://butopea.com/3-szemelyes-kanape-kinyithato-szovet-szurke-fem-labakkal-fiacre-dehal-199649-d
-- Product: FIACRE 3-seater sofa, foldable, grey fabric, metal legs
-- Brand: FIACRE / Butopêa
-- Price: 108,990 HUF
-- Status: In stock
+
 
 **Tech stack:**
 - Framework: **Nuxt 3** with **Vue 3** (`<script setup>` Composition API)
