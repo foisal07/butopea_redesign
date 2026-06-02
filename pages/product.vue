@@ -11,23 +11,22 @@ const productImages = [img1, img2, img3];
     <!-- 1. Image gallery with zoom, thumbnails, availability label -->
     <ProductImageGallery :images="productImages" />
 
-    <!-- 2. Product title, subtitle, price -->
-    <ProductInfo />
+    <div class="container">
+      <!-- 2. Product title, subtitle, price -->
+      <ProductInfo />
 
-    <!-- 3. Colour / variant selector -->
-    <ProductVariantSelector />
+      <!-- 4. Quantity + Add to Cart button -->
+      <ProductAddToCart />
 
-    <!-- 4. Quantity + Add to Cart button -->
-    <ProductAddToCart />
+      <!-- 5. USP strip: free shipping, delivery date, why Butopea, free returns -->
+      <ProductTrustBadges />
 
-    <!-- 5. USP strip: free shipping, delivery date, why Butopea, free returns -->
-    <ProductTrustBadges />
+      <!-- 6. Product specification accordion -->
+      <ProductDetails />
 
-    <!-- 6. Product specification accordion -->
-    <ProductDetails />
-
-    <!-- 7. Customer reviews -->
-    <ProductReviewsSection />
+      <!-- 7. Customer reviews -->
+      <ProductReviewsSection />
+    </div>
 
     <!-- 8. Sticky ATC bar (appears when main ATC scrolls out of view) -->
     <ProductStickyCartBar />
