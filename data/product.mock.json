@@ -24,13 +24,29 @@
     ]
   },
   "attributes": [
-    { "label": "Anyag", "value": "Szövet" },
-    { "label": "Lábak", "value": "Fém" },
-    { "label": "Férőhelyek", "value": "3 személyes" },
-    { "label": "Kinyitható", "value": "Igen" },
-    { "label": "Szélesség", "value": "173 cm" },
-    { "label": "Mélység", "value": "83 cm" },
-    { "label": "Magasság", "value": "80 cm" }
+    {
+      "group": "Product size",
+      "items": [
+        { "label": "Length", "value": "173.00 cm" },
+        { "label": "Width",  "value": "83.00 cm"  },
+        { "label": "Height", "value": "80.00 cm"  }
+      ]
+    },
+    {
+      "group": "Weight",
+      "items": [
+        { "label": "Weight", "value": "29.00 kg" }
+      ]
+    }
+  ],
+  "packaging": {
+    "size":     "179 × 100 × 23 cm",
+    "packages": 1,
+    "weight":   "30 kg"
+  },
+  "productDetails": [
+    { "label": "Color",          "value": "Gray, silver"      },
+    { "label": "Article number", "value": "DEHAL-199649[D]"  }
   ],
   "description": "Egy szép és stílusos kanapé, amely szobánk gyöngyszeme lesz! Kialakíthatod kedvenc kuckózós sarkodat hálószobádban, egy hangulatos olvasós bázist a nappalidban, vagy épp a legkényelmesebb helyet a TV nézéshez!",
   "deliveryInfo": "3–5 munkanap",
