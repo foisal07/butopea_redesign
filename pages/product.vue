@@ -2,8 +2,10 @@
 import img1 from '~/assets/images/image_1.png';
 import img2 from '~/assets/images/image_2.jpg';
 import img3 from '~/assets/images/image_3.jpg';
+import mockData from '~/data/product.mock.json';
 
 const productImages = [img1, img2, img3];
+const productPrice = mockData.price;
 </script>
 
 <template>
@@ -18,7 +20,10 @@ const productImages = [img1, img2, img3];
       <!-- 4. Quantity + Add to Cart button -->
       <ProductAddToCart />
 
-      <!-- 5. USP strip: free shipping, delivery date, why Butopea, free returns -->
+      <!-- 5. Shipment info: free shipping eligibility + dynamic delivery window -->
+      <ProductShipment :price="productPrice" />
+
+      <!-- 6. USP strip: free shipping, delivery date, why Butopea, free returns -->
       <ProductTrustBadges />
 
       <!-- 6. Product specification accordion -->

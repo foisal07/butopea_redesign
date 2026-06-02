@@ -14,8 +14,8 @@
       
       <div class="price-container">
         <span class="price-value">{{ formattedPriceValue }}</span><sup class="price-currency">{{ formattedCurrency }}</sup>
+        <span class="price-note">including VAT</span>
       </div>
-      <p class="price-note">Price, including VAT</p>
     </div>
   </div>
 </template>
@@ -148,11 +148,13 @@ const formattedCurrency = computed(() => {
 }
 
 .price-note {
-  margin: var(--spacing-2) 0 0 0;
+  align-self: flex-end;
+  margin: 0 0 4px var(--spacing-2);
   font-family: var(--font-body);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-grey);
   font-weight: var(--font-weight-regular);
+  white-space: nowrap;
 }
 
 /* Tablet and Desktop scaling */
