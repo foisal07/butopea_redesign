@@ -1,0 +1,52 @@
+{
+  "id": "dehal-199649-d",
+  "sku": "DEHAL-199649-D",
+  "name": "FIACRE",
+  "subtitle": "3 személyes kanapé, kinyitható, szövet, szürke, fém lábakkal",
+  "brand": "FIACRE",
+  "price": 108990,
+  "currency": "HUF",
+  "originalPrice": null,
+  "discount": null,
+  "rating": 4.7,
+  "reviewCount": 124,
+  "inStock": true,
+  "stockCount": 8,
+  "images": [
+    "https://butopea.com/img/1024/1024/resize/catalog/Product_pictures/DEHAL/dehal-199649[d]_1.jpg",
+    "https://butopea.com/img/1024/1024/resize/catalog/Product_pictures/DEHAL/dehal-199649[d]_2.jpg",
+    "https://butopea.com/img/1024/1024/resize/catalog/Product_pictures/DEHAL/dehal-199649[d]_3.jpg"
+  ],
+  "variants": {
+    "colors": [
+      { "id": "grey", "label": "Szürke", "hex": "#9E9E9E", "active": true },
+      { "id": "beige", "label": "Bézs", "hex": "#D2B48C", "active": false }
+    ]
+  },
+  "attributes": [
+    { "label": "Anyag", "value": "Szövet" },
+    { "label": "Lábak", "value": "Fém" },
+    { "label": "Férőhelyek", "value": "3 személyes" },
+    { "label": "Kinyitható", "value": "Igen" },
+    { "label": "Szélesség", "value": "220 cm" },
+    { "label": "Mélység", "value": "90 cm" },
+    { "label": "Magasság", "value": "88 cm" }
+  ],
+  "description": "Egy szép és stílusos kanapé, amely szobánk gyöngyszeme lesz! Kialakíthatod kedvenc kuckózós sarkodat hálószobádban, egy hangulatos olvasós bázist a nappalidban, vagy épp a legkényelmesebb helyet a TV nézéshez!",
+  "deliveryInfo": "3–5 munkanap",
+  "returnPolicy": "30 napos visszaküldési jog",
+  "reviews": [
+    {
+      "author": "Kovács Anna",
+      "rating": 5,
+      "date": "2024-11-10",
+      "text": "Nagyon szép és kényelmes! Pontosan olyan, mint a képeken."
+    },
+    {
+      "author": "Szabó Péter",
+      "rating": 4,
+      "date": "2024-10-22",
+      "text": "Jó minőség, gyors szállítás. Ajánlom mindenkinek!"
+    }
+  ]
+}
