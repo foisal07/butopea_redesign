@@ -1,5 +1,5 @@
 <template>
-  <div class="add-to-cart-container">
+  <div id="main-add-to-cart" class="add-to-cart-container">
     <!-- Quantity Selector -->
     <div class="quantity-selector">
       <button 

@@ -34,6 +34,10 @@ const productPrice = mockData.price;
     </div>
 
     <!-- 8. Sticky ATC bar (appears when main ATC scrolls out of view) -->
-    <ProductStickyCartBar />
+    <ProductStickyCartBar
+      :price="mockData.price"
+      :currency="mockData.currency"
+      :stock-count="mockData.stockCount"
+    />
   </main>
 </template>
