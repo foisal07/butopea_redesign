@@ -6,6 +6,9 @@ import { ref, onMounted, onUnmounted } from 'vue'
 // round-trip with a small setTimeout so the v-if loading guard is exercised.
 // Swap out the setTimeout block for a real fetch() / useFetch() call in prod.
 import rawMock from '~/data/product.mock.json'
+import img1 from '~/assets/images/image_1.png'
+import img2 from '~/assets/images/image_2.jpg'
+import img3 from '~/assets/images/image_3.jpg'
 
 /** @type {import('vue').Ref<typeof rawMock | null>} */
 const productData = ref(null)
@@ -15,7 +18,7 @@ onMounted(() => {
   // Simulates ~300 ms network latency so the skeleton is visible on load.
   setTimeout(() => {
     productData.value = rawMock
-    galleryImages.value = rawMock.images ?? []
+    galleryImages.value = [img1, img2, img3]
   }, 300)
 })
 
@@ -132,8 +135,23 @@ onUnmounted(() => {
 .product-grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-2); /* Reduced gap to bring components closer */
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .grid-item-right-sticky,
+  .grid-item-details,
+  .grid-item-reviews,
+  /* Skeletons */
+  .grid-item-info,
+  .grid-item-addtocart,
+  .grid-item-shipment,
+  .grid-item-trust,
+  .skeleton-accordion,
+  .skeleton--reviews {
+    padding-inline: var(--spacing-2); /* sm padding for left/right */
+  }
 }
 
 /* Mobile ordering is handled by DOM order:
@@ -148,6 +166,9 @@ onUnmounted(() => {
     display: grid;
     grid-template-columns: 60fr 40fr;
     gap: 2.5rem;
+    max-width: var(--max-width-container);
+    margin-inline: auto;
+    padding-inline: var(--page-padding-tablet);
     /*
       Do NOT set align-items: start here.
       The grid items must stretch to allow position: sticky to work within them.
@@ -155,7 +176,11 @@ onUnmounted(() => {
   }
 
   /* Place left column items explicitly in column 1 */
-  .grid-item-gallery { grid-column: 1; grid-row: 1; }
+  .grid-item-gallery { 
+    grid-column: 1; 
+    grid-row: 1; 
+    padding-top: var(--spacing-10); /* larger padding-top for desktop */
+  }
   .grid-item-details { grid-column: 1; grid-row: 2; }
   .grid-item-reviews { grid-column: 1; grid-row: 3; }
 
@@ -203,7 +228,7 @@ onUnmounted(() => {
 .skeleton--reviews { margin-top: 1.5rem; height: 220px; }
 
 /* Right column skeletons */
-.grid-item-info { display: flex; flex-direction: column; gap: 0.75rem; padding-top: 1rem; }
+.grid-item-info { display: flex; flex-direction: column; gap: 0.75rem; padding-top: 0; }
 .skeleton--title    { height: 32px; width: 55%; }
 .skeleton--subtitle { height: 20px; width: 85%; }
 .skeleton--price    { height: 52px; width: 45%; margin-top: 0.25rem; }
@@ -217,6 +242,12 @@ onUnmounted(() => {
     display: grid;
     grid-template-columns: 60fr 40fr;
     gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    padding-inline: var(--page-padding-desktop);
   }
 }
 </style>

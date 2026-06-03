@@ -328,19 +328,7 @@ const handleTouchEnd = (e) => {
         ></button>
       </div>
 
-      <!-- Desktop Thumbnails Navigation -->
-      <div v-if="images.length > 1" class="gallery-thumbnails">
-        <button
-          v-for="(image, index) in images"
-          :key="`thumb-${index}`"
-          class="thumbnail-btn"
-          :class="{ 'is-active': index === activeIndex }"
-          @click="scrollTo(index)"
-          :aria-label="`Go to image ${index + 1}`"
-        >
-          <img :src="image" alt="" />
-        </button>
-      </div>
+
     </div>
 
     <!-- Lightbox Modal via Teleport -->
@@ -543,56 +531,8 @@ const handleTouchEnd = (e) => {
   background-color: var(--color-primary, #111827);
 }
 
-/* Thumbnails */
-.gallery-thumbnails {
-  display: none; /* Hidden on mobile */
-  justify-content: flex-start;
-  gap: 8px;
-  margin-top: 16px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  scrollbar-width: none;
-}
 
-.gallery-thumbnails::-webkit-scrollbar {
-  display: none;
-}
 
-.thumbnail-btn {
-  width: 64px;
-  height: 64px;
-  flex-shrink: 0;
-  padding: 0;
-  border: 2px solid transparent;
-  border-radius: var(--radius-sm, 6px);
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: var(--color-surface, #f9f9f9);
-}
-
-.thumbnail-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
-}
-
-.thumbnail-btn:hover img {
-  opacity: 1;
-}
-
-.thumbnail-btn.is-active {
-  border-color: var(--color-primary, #111827);
-}
-
-.thumbnail-btn.is-active img {
-  opacity: 1;
-}
-
-/* Media Queries for Desktop */
 @media (min-width: 768px) {
   .nav-btn {
     display: flex;
@@ -600,10 +540,6 @@ const handleTouchEnd = (e) => {
 
   .gallery-dots {
     display: none;
-  }
-
-  .gallery-thumbnails {
-    display: flex;
   }
 }
 
