@@ -1,4 +1,7 @@
 <script setup>
+import { computed } from 'vue'
+import mockData from '~/data/product.mock.json'
+
 /**
  * StatusLabel
  * A reusable pill-shaped label for status indicators.
@@ -12,10 +15,10 @@
  *              "primary"            → brand pink — for promotional tags
  *              "neutral"            → grey  — for informational labels
  */
-defineProps({
+const props = defineProps({
   text: {
     type: String,
-    required: true,
+    required: false,
   },
   variant: {
     type: String,
@@ -24,16 +27,32 @@ defineProps({
       ['success', 'warning', 'error', 'primary', 'neutral'].includes(v),
   },
 })
+
+const displayData = computed(() => {
+  if (props.text) {
+    return { text: props.text, variant: props.variant };
+  }
+  
+  const stockCount = mockData.stockCount || 0;
+  
+  if (stockCount === 0) {
+    return { text: 'Out of stock', variant: 'error' };
+  } else if (stockCount < 5) {
+    return { text: 'Finishing', variant: 'warning' };
+  } else {
+    return { text: 'Available', variant: 'success' };
+  }
+})
 </script>
 
 <template>
   <span
-    :class="['status-label', `status-label--${variant}`]"
+    :class="['status-label', `status-label--${displayData.variant}`]"
     role="status"
-    :aria-label="text"
+    :aria-label="displayData.text"
   >
     <span class="status-label__dot" aria-hidden="true"></span>
-    {{ text }}
+    {{ displayData.text }}
   </span>
 </template>
 

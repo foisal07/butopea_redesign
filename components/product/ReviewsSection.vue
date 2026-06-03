@@ -245,6 +245,7 @@ const hasReviews     = computed(() => reviews.length > 0)
   margin-top: var(--spacing-6, 24px);
   background-color: var(--color-bg-light, #f5f5f5);
   padding: var(--spacing-6) var(--spacing-4);
+  border-radius: var(--radius-md, 8px);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-4);
@@ -481,8 +482,9 @@ const hasReviews     = computed(() => reviews.length > 0)
   display: flex;
   flex-direction: column;
   box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.15);
-  /* Desktop: constrain width */
-  max-width: 640px;
+  /* Make width responsive and take more space on desktop */
+  width: 100%;
+  max-width: min(900px, 92vw);
   margin-inline: auto;
 }
 

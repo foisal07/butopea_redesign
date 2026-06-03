@@ -254,13 +254,19 @@ const sections = [
 /* ─── Accordion container ─────────────────────────────────────────────────── */
 .accordion {
   margin-top: var(--spacing-6, 24px);
-  border-top: 1px solid var(--color-light-grey, #e6e6e6);
+  border: 1px solid var(--color-light-grey, #e6e6e6);
+  border-radius: var(--radius-md, 8px);
   background: var(--color-white, #ffffff);
+  overflow: hidden;
 }
 
 /* ─── Each accordion item — provides its own bottom border ───────────────── */
 .accordion-item {
   border-bottom: 1px solid var(--color-light-grey, #e6e6e6);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
 }
 
 /* ─── Header button ───────────────────────────────────────────────────────── */

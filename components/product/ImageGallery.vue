@@ -259,7 +259,7 @@ const handleTouchEnd = (e) => {
     <div v-else class="gallery-container">
       <!-- Status Label overlay -->
       <div class="gallery-status-overlay">
-        <UtilsStatusLabel text="Available" />
+        <UtilsStatusLabel />
       </div>
 
       <!-- Zoom Trigger -->
