@@ -7,9 +7,11 @@
     </div>
     
     <div v-else class="info-content">
-      <h1 class="title">{{ productData.name }}</h1>
+      <h1 class="title">
+        {{ productData.name }}
+      </h1>
       <p class="subtitle-container">
-        <span class="subtitle">{{ productData.subtitle }}</span><template v-if="formattedSize">,<span class="size">{{ formattedSize }}</span></template>
+        <span class="subtitle">{{ productData.subtitle }}</span><template v-if="formattedSize"><span class="title-size">{{ formattedSize }}</span></template>
       </p>
       
       <div class="price-container">
@@ -31,14 +33,27 @@ const productColors = mockData.variants?.colors ?? [];
 
 const formattedSize = computed(() => {
   if (!productData.value) return ''
-  const attrs = productData.value.attributes || []
+  const attributes = productData.value.attributes || []
+  const sizeGroup = attributes.find(g => g.group === 'Product size')
+  if (!sizeGroup) return ''
   
-  const width = attrs.find(a => a.label === 'Szélesség')?.value.replace(/[^0-9]/g, '')
-  const depth = attrs.find(a => a.label === 'Mélység')?.value.replace(/[^0-9]/g, '')
-  const height = attrs.find(a => a.label === 'Magasság')?.value.replace(/[^0-9]/g, '')
+  const items = sizeGroup.items || []
+  const getVal = (label) => {
+    const item = items.find(i => i.label === label)
+    return item ? Math.round(parseFloat(item.value)) : ''
+  }
   
-  if (width || depth || height) {
-    return ` ${width}x${depth}x${height}cm`
+  const length = getVal('Length')
+  const width = getVal('Width')
+  const height = getVal('Height')
+  
+  const parts = []
+  if (length) parts.push(`${length}cm`)
+  if (width) parts.push(`${width}cm`)
+  if (height) parts.push(`${height}cm`)
+  
+  if (parts.length > 0) {
+    return ` ${parts.join(' x ')}`
   }
   return ''
 })
@@ -105,24 +120,25 @@ const formattedCurrency = computed(() => {
 .title {
   margin: 0 0 var(--spacing-1) 0;
   font-family: var(--font-display);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-base);
   line-height: var(--line-height-tight);
   color: var(--color-dark);
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 }
 
+.title-size {
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
 .subtitle-container {
   margin: 0 0 var(--spacing-4) 0;
   font-family: var(--font-body);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   line-height: var(--line-height-normal);
-  color: var(--color-dark);
+  color: var(--color-grey);
   font-weight: var(--font-weight-regular);
-}
-
-.size {
-  text-decoration: underline;
 }
 
 .price-container {
@@ -166,7 +182,7 @@ const formattedCurrency = computed(() => {
   }
   
   .title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-lg);
   }
 }
 </style>
