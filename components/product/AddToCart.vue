@@ -1,26 +1,5 @@
 <template>
   <div id="main-add-to-cart" class="add-to-cart-container">
-    <!-- Quantity Selector -->
-    <div class="quantity-selector">
-      <button 
-        class="qty-btn" 
-        @click="decrement" 
-        :disabled="quantity <= 1"
-        aria-label="Decrease quantity"
-      >
-        -
-      </button>
-      <span class="qty-display">{{ quantity }}</span>
-      <button 
-        class="qty-btn" 
-        @click="increment" 
-        :disabled="quantity >= stockCount"
-        aria-label="Increase quantity"
-      >
-        +
-      </button>
-    </div>
-
     <!-- Add to Cart Button -->
     <button class="add-to-cart-btn" @click="addToCart">
       Add to Cart
@@ -30,7 +9,7 @@
     <Teleport to="body">
       <Transition name="toast-fade">
         <div v-if="showToast" class="toast-notification" role="alert">
-          Successfully added {{ quantity }} item(s) to cart!
+          Successfully added to cart!
         </div>
       </Transition>
     </Teleport>
@@ -40,29 +19,8 @@
 <script setup>
 import { ref } from 'vue'
 
-const props = defineProps({
-  stockCount: {
-    type: Number,
-    required: true,
-    default: 0
-  }
-})
-
-const quantity = ref(1)
 const showToast = ref(false)
 let toastTimeout = null
-
-const increment = () => {
-  if (quantity.value < props.stockCount) {
-    quantity.value++
-  }
-}
-
-const decrement = () => {
-  if (quantity.value > 1) {
-    quantity.value--
-  }
-}
 
 const addToCart = () => {
   // Edge Case 1: Spam-clicking resets the timer and prevents overlap
@@ -83,50 +41,8 @@ const addToCart = () => {
 .add-to-cart-container {
   display: flex;
   align-items: center;
-  gap: var(--spacing-4, 16px);
-  margin-top: var(--spacing-6, 24px);
+  margin-top: var(--spacing-2, 8px);
   width: 100%;
-}
-
-.quantity-selector {
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--border-color, #e6e6e6);
-  border-radius: var(--radius-md, 8px);
-  overflow: hidden;
-  height: 48px;
-  background: var(--color-white, #fff);
-}
-
-.qty-btn {
-  background: transparent;
-  color: var(--color-dark, #222);
-  width: 40px;
-  height: 100%;
-  font-size: var(--font-size-lg, 18px);
-  font-weight: var(--font-weight-regular, 400);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color var(--transition-fast, 0.15s ease);
-}
-
-.qty-btn:hover:not(:disabled) {
-  background: var(--color-bg-light, #f4f4f4);
-}
-
-.qty-btn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.qty-display {
-  width: 40px;
-  text-align: center;
-  font-family: var(--font-body, 'Roboto', sans-serif);
-  font-weight: var(--font-weight-medium, 500);
-  color: var(--color-dark, #222);
-  user-select: none;
 }
 
 .add-to-cart-btn {

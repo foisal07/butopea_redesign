@@ -16,6 +16,7 @@
         <span class="price-value">{{ formattedPriceValue }}</span><sup class="price-currency">{{ formattedCurrency }}</sup>
         <span class="price-note">including VAT</span>
       </div>
+            <ProductVariantSelector :colors="productColors" />
     </div>
   </div>
 </template>
@@ -26,6 +27,7 @@ import mockData from '~/data/product.mock.json'
 
 // ASSUMPTION: Product data is loaded locally from the JSON file.
 const productData = ref(mockData)
+const productColors = mockData.variants?.colors ?? [];
 
 const formattedSize = computed(() => {
   if (!productData.value) return ''
@@ -54,7 +56,7 @@ const formattedCurrency = computed(() => {
 
 <style scoped>
 .product-info {
-  padding: var(--spacing-6) 0; 
+  padding: var(--spacing-6) 0 0;
 }
 
 /* Skeletons */
@@ -160,7 +162,7 @@ const formattedCurrency = computed(() => {
 /* Tablet and Desktop scaling */
 @media (min-width: 768px) {
   .product-info {
-    padding: var(--spacing-6) 0;
+    padding: var(--spacing-6) 0 0;
   }
   
   .title {
