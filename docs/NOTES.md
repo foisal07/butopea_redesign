@@ -172,3 +172,4 @@ https://app.notion.com/p/Documentation-AI-assisted-workflow-for-Butopea-product-
 - **AR furniture preview** — let users visualise the piece in their own space before buying (highest-impact trust signal for furniture)
 - **Real user testing** — validate delivery date format and size-in-title assumptions with actual Butopea customers
 - **Price comparison widget** — surface a live "25% cheaper than [competitor]" data point next to the price to close price-skeptical users
+- **Adding Notify button** - if a product is out of stock instead of "Add to cart" the button becomes "Add to notification" it will update them as soon as it's available

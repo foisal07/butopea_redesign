@@ -38,7 +38,7 @@ const displayData = computed(() => {
   if (stockCount === 0) {
     return { text: 'Out of stock', variant: 'error' };
   } else if (stockCount < 5) {
-    return { text: 'Finishing', variant: 'warning' };
+    return { text: 'Only 4 left', variant: 'warning' };
   } else {
     return { text: 'Available', variant: 'success' };
   }
