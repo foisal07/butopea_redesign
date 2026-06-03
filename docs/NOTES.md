@@ -47,7 +47,7 @@ I identified friction points through auditing the live page, a quick round of us
 
 ---
 
-### 1.4 Size in the Product Title
+### 1.4 Size in the Product Title and Product gallery
 
 **Problem:** Product size is buried inside the product specifications accordion. Users have to actively scroll and hunt for it — but for furniture, size is one of the top reasons people don't buy.
 
