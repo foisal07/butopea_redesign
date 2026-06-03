@@ -33,11 +33,30 @@ const productPrice = mockData.price;
       <ProductReviewsSection />
     </div>
 
-    <!-- 8. Sticky ATC bar (appears when main ATC scrolls out of view) -->
-    <ProductStickyCartBar
+    <!-- 8. Sticky ATC bar (appears when main ATC scrolls out of view) --> 
+        <ProductStickyCartBar
       :price="mockData.price"
       :currency="mockData.currency"
       :stock-count="mockData.stockCount"
-    />
+    /> 
+
   </main>
 </template>
+
+<style scoped>
+/*
+  Clear the fixed-position StickyCartBar (≈72 px on mobile, ≈84 px on tablet).
+  Using a permanent bottom padding is the simplest approach: the extra whitespace
+  is invisible when the bar is hidden, and prevents the bar from ever covering
+  the last element on the page when it is visible.
+*/
+main {
+  padding-bottom: 72px;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding-bottom: 84px;
+  }
+}
+</style>

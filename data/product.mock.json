@@ -54,15 +54,45 @@
   "reviews": [
     {
       "author": "Kovács Anna",
+      "title": "Gyönyörű és kényelmes",
       "rating": 5,
       "date": "2024-11-10",
-      "text": "Nagyon szép és kényelmes! Pontosan olyan, mint a képeken."
+      "text": "Nagyon szép és kényelmes! Pontosan olyan, mint a képeken. Az összeszerelés egyszerű volt, és az anyag minősége kiváló."
     },
     {
       "author": "Szabó Péter",
+      "title": "Kiváló ár-érték arány",
       "rating": 4,
       "date": "2024-10-22",
-      "text": "Jó minőség, gyors szállítás. Ajánlom mindenkinek!"
+      "text": "Jó minőség, gyors szállítás. Ajánlom mindenkinek! Csak egy kis karcolás volt az egyik lábon, de összességében nagyon elégedett vagyok."
+    },
+    {
+      "author": "Nagy Eszter",
+      "title": "Stílusos és praktikus",
+      "rating": 5,
+      "date": "2024-09-14",
+      "text": "Pontosan ilyen kanapét kerestem a nappalimba. Az összecsukható funkció nagyon praktikus, és a szövet anyaga könnyen tisztítható."
+    },
+    {
+      "author": "Horváth Gábor",
+      "title": "Szép, de az összeszerelésen van mit javítani",
+      "rating": 3,
+      "date": "2024-08-30",
+      "text": "A kanapé nagyon szép, de az összeszerelésnél nehézségekbe ütköztem – az utasítások nem voltak elég egyértelműek. Végül sikerült, de több időt vett igénybe a vártnál."
+    },
+    {
+      "author": null,
+      "title": "Meglepően kényelmes",
+      "rating": 5,
+      "date": "2024-07-05",
+      "text": "Nem számítottam arra, hogy ilyen kényelmes lesz a képek alapján. Valódi meglepetés volt! Az anyag puha és a párnák jól tartják a formájukat."
+    },
+    {
+      "author": "Fekete Réka",
+      "title": "Ajánlom mindenkinek",
+      "rating": 4,
+      "date": "2024-06-18",
+      "text": "Gyorsan megérkezett, szépen volt csomagolva. A szürke szín pontosan illeszkedik a nappalim dekorációjához. Nagyon elégedett vagyok a vásárlással."
     }
   ]
 }

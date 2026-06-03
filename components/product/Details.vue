@@ -271,7 +271,7 @@ const sections = [
   justify-content: space-between;
   gap: var(--spacing-4, 16px);
   /* Tall rows match the reference: ~20px top + bottom */
-  padding: var(--spacing-5, 20px) 0;
+  padding: var(--spacing-5, 20px) var(--spacing-4, 16px);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -338,7 +338,7 @@ const sections = [
 
 /* Inner wrapper: this is where spacing lives, fully inside the clip zone */
 .accordion-content {
-  padding-bottom: var(--spacing-5, 20px);
+  padding: 0 var(--spacing-4, 16px) var(--spacing-5, 20px);
 }
 
 /* ─── Attribute groups (Features & Wrapping) ──────────────────────────────── */
